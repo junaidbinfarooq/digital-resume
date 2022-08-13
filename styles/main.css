@@ -121,3 +121,25 @@ li {
 	margin-bottom: 3em;
 	padding-left: 2em;
 }
+
+@media (max-width: 600px) {
+	#wrapper--hero {
+		flex-direction: column;
+		gap: 1em;
+	}
+
+	#profile-pic {
+		width: 200px;
+		height: 200px;
+	}
+
+	.section--page {
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+
+	.card--work-history {
+		border-left: none;
+		padding-left: 0;
+	}
+}
