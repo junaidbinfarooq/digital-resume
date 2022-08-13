@@ -97,3 +97,7 @@ li {
 .socials--list a:hover {
 	color: var(--mainLinkColor);
 }
+
+#qualifications--list {
+	list-style: none;
+}
