@@ -1,27 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
 
 :root {
-	--mainTextColor-light: #000;
-	--secondaryTextColor-light: rgb(51 51 51);
-	--mainLinkColor-light: #0da2b8;
-	--mainBorderColor-light: rgb(218, 218, 218);
-	--mainBgColor-light: rgb(249, 250, 251);
-
-	--mainTextColor-dark: #fff;
-	--secondaryTextColor-dark: #adb0b1;
-	--mainLinkColor-dark: rgb(30, 190, 214);
-	--mainBorderColor-dark: #2b3031;
-	--mainBgColor-dark: #131415;
-
-	--mainTextColor: var(--mainTextColor-light);
-	--secondaryTextColor: var(--secondaryTextColor-light);
-	--mainLinkColor: var(--mainLinkColor-light);
-	--mainBorderColor: var(--mainBorderColor-light);
-	--mainBgColor: var(--mainBgColor-light);
+	font-size: 16px;
 }
 
 * {
-	font-family: 'Readex Pro';
+	font-family: 'Readex Pro', sans-serif;
 	box-sizing: border-box;
 	color: var(--mainTextColor);
 }
@@ -48,6 +32,60 @@ body::-webkit-scrollbar-thumb {
 	background: #6649b8;
 }
 
+.navbar {
+	position: fixed;
+	background-color: var(--mainBgColor);
+	width: 8rem;
+	height: 100vh;
+	transition: width 600ms ease;
+}
+
+.navbar-nav {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+}
+
+.nav-item {
+	width: 100%;
+}
+
+.nav-item:last-child {
+	margin-top: auto;
+}
+
+a.nav-link {
+	display: flex;
+	align-items: center;
+	height: 8rem;
+	color: var(--mainTextColor);
+	text-decoration: none;
+}
+
+a.nav-link:hover {
+	background: var(--secondaryBgColor);
+	color: var(--secondaryTextColor);
+}
+
+.link-text {
+	margin-left: 1rem;
+}
+
+a.nav-link svg {
+	width: 2rem;
+	min-width: 2rem;
+	margin: 0 1.5rem;
+}
+
+.container--main {
+	max-width: 700px;
+	margin: 0 auto;
+}
+
 p,
 span,
 li {
@@ -58,20 +96,10 @@ li {
 a {
 	text-decoration: none;
 	color: var(--mainLinkColor);
-	font-size: 500;
 }
 
 li {
 	line-height: 1.9em;
-}
-
-.container--main {
-	max-width: 700px;
-	margin: 0 auto;
-}
-
-.section--page {
-	padding-bottom: 1em;
 }
 
 #wrapper--hero {
@@ -112,7 +140,7 @@ li {
 	transition: 0.3s;
 }
 
-.socials--list a:hover {
+article.socials--list a:hover {
 	color: var(--mainLinkColor);
 }
 
@@ -120,7 +148,7 @@ li {
 	list-style: none;
 }
 
-#wrapper--techstack__items {
+#wrapper--tech-stack__items {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
@@ -128,18 +156,16 @@ li {
 	font-size: 0.8em;
 }
 
-.card--techstack {
-	/* border: 1px solid var(--mainBorderColor); */
-	padding: 0.5 1em;
-	/* border-radius: 5px; */
+.card--tech-stack {
+	padding: 0.5em 1em;
 }
 
-.card--techstack__label {
+.card--tech-stack__label {
 	color: var(--secondaryTextColor);
 	font-size: 1.5em;
 }
 
-.card--techstack__content {
+.card--tech-stack__content {
 	color: var(--secondaryTextColor);
 	font-size: 1.2em;
 }
@@ -151,7 +177,47 @@ li {
 	padding-left: 2em;
 }
 
-@media (max-width: 600px) {
+.logo {
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	color: var(--secondaryTextColor);
+	background: var(--secondaryBgColor);
+	font-size: 1.5rem;
+	letter-spacing: 0.3ch;
+	width: 100%;
+}
+
+.logo-text {
+	display: inline;
+	position: absolute;
+}
+
+@media only screen and (max-width: 600px) {
+	.navbar {
+		bottom: 0;
+		width: 100vw;
+		height: 8rem;
+	}
+
+	.logo {
+		display: none;
+	}
+
+	.navbar-nav {
+		flex-direction: row;
+	}
+
+	.nav-link {
+		justify-content: center;
+	}
+
+	main {
+		margin: 0;
+	}
+}
+
+@media (max-width: 950px) {
 	#wrapper--hero {
 		flex-direction: column;
 		gap: 1em;
@@ -160,6 +226,10 @@ li {
 	#profile-pic {
 		width: 200px;
 		height: 200px;
+	}
+
+	.section-link {
+		display: none;
 	}
 
 	.section--page {
@@ -171,4 +241,47 @@ li {
 		border-left: none;
 		padding-left: 0;
 	}
+}
+
+.light {
+	--mainTextColor: #000;
+	--secondaryTextColor: rgb(51 51 51);
+	--mainLinkColor: #0da2b8;
+	--mainBorderColor: rgb(218, 218, 218);
+	--mainBgColor: rgb(249, 250, 251);
+	--secondaryBgColor: #ececec;
+}
+
+.dark {
+	--mainTextColor: #fff;
+	--secondaryTextColor: #adb0b1;
+	--mainLinkColor: rgb(30, 190, 214);
+	--mainBorderColor: #2b3031;
+	--mainBgColor: #131415;
+	--secondaryBgColor: #3a3e44;
+}
+
+.solar {
+	--mainTextColor: #576e75;
+	--secondaryTextColor: #35535c;
+	--mainLinkColor: #0da2b8;
+	--mainBorderColor: rgb(218, 218, 218);
+	--mainBgColor: #fdf6e3;
+	--secondaryBgColor: #f5e5b8;
+}
+
+.theme-icon {
+	display: none;
+}
+
+.dark #darkIcon {
+	display: block;
+}
+
+.light #lightIcon {
+	display: block;
+}
+
+.solar #solarIcon {
+	display: block;
 }
